@@ -15,7 +15,7 @@ const deleteCharFromStr = function (str, charsArr) {
 
     let answer = '';
     for (let i of str) {
-        if (!isSymbolInChars(i, charsArr))  // !charsArr.include(i)
+        if (!isSymbolInChars(i, charsArr))  // !charsArr.includes(i)
             answer += i;
     }
 
