@@ -52,7 +52,7 @@ function deleteElements(arr, start, stop) {
 }
 
 
-function main() {
+(function () {
     let sizeArr = Number(prompt('Введіть довжина масиву:'));
 
     if (isNaN(sizeArr)) {
@@ -76,7 +76,4 @@ function main() {
 
     deleteElements(arr, 2, 4);  // arr.splice(2,3);
     alert(`Видалити елементи з масиву з 2 по 4: ${arr}`);
-}
-
-
-main();
+})();
