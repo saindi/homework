@@ -2,8 +2,6 @@ let action = prompt('Що ви хочете зробити? (add, sub, mult, div
 let firstNumber = Number(prompt('Введіть перше число: '));
 let secondNumber = Number(prompt('Введіть друге число:'));
 
-console.log(isNaN(firstNumber));
-
 if (!(isNaN(firstNumber) || isNaN(secondNumber))) {
     switch (action) {
         case 'add':
