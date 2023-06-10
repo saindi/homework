@@ -55,7 +55,7 @@ document.querySelector("#get_comment").onclick = function(){
 
             let divComments = document.createElement("div");
             divComments.id = 'comments';
-            divComments.className = 'comments row justify-content-md-center mt-4';
+            divComments.className = 'comments row justify-content-center mt-4';
             document.getElementById('container').appendChild(divComments);
 
             for (let item of json) {
