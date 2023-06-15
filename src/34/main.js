@@ -12,6 +12,15 @@ const parentCategory = document.getElementById('parent_category');
 const parentProducts = document.getElementById('parent_product');
 const btnBuy = document.getElementById('buy_product');
 
+let options = {
+    animation: true,
+    delay: 3000
+};
+
+let toastSuccess = new bootstrap.Toast(document.getElementById('successToast'), options);
+let toastError = new bootstrap.Toast(document.getElementById('errorToast'), options);
+
+
 window.onload = function() {
     fetch('https://dummyjson.com/products/categories/')
         .then(res => res.json())
@@ -28,8 +37,7 @@ window.onload = function() {
             }
         })
         .catch((error) => {
-            alert('Server error!');
-            console.log(error);
+            toastError.show();
         })
 };
 
@@ -55,8 +63,7 @@ parentCategory.addEventListener('click', function(event) {
             }
         })
         .catch((error) => {
-            alert('Server error!');
-            console.log(error);
+            toastError.show();
         })
 });
 
@@ -81,7 +88,11 @@ parentProducts.addEventListener('click', function(event) {
         })
 });
 
+
 btnBuy.addEventListener('click', function(event) {
-    alert('Purchase was successful');
-    location.reload();
+    toastSuccess.show();
+
+    setTimeout(function() {
+        location.reload();
+    }, 3000);
 });

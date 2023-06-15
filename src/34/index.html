@@ -16,12 +16,12 @@
     <div class="row m-4">
 
         <div class="col-3 card-body p-0 border">
-            <div class="list-group overflow-auto" style="max-height: 600px;" id="parent_category">
+            <div class="list-group overflow-auto" style="max-height: 650px;" id="parent_category">
             </div>
         </div>
 
         <div class="col-3 card-body p-0 border">
-            <div class="list-group overflow-auto" style="max-height: 600px;" id="parent_product">
+            <div class="list-group overflow-auto" style="max-height: 650px;" id="parent_product">
             </div>
         </div>
 
@@ -42,6 +42,35 @@
     </div>
 
 </div>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Store</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+        </div>
+        <div class="toast-body">
+            Thank you for shopping!
+        </div>
+    </div>
+</div>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="errorToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Store</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+        </div>
+        <div class="toast-body">
+            Sorry, server error.
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
 <script src="main.js"></script>
 
