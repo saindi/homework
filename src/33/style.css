@@ -1,0 +1,27 @@
+.table-wrap {
+    width: 100%;
+    overflow:auto;
+    font-size: 30px;
+}
+
+.table-item:hover {
+    background: #e0d7d7;
+    transition: 0.25s linear;
+}
+
+.table-item {
+    min-width: 100px;
+}
+
+.full-case {
+    width: 100%;
+}
+
+.table-item-dropdown {
+    width: 60px;
+}
+
+.table-item-dropdown:hover {
+    background: #e0d7d7;
+    transition: 0.25s linear;
+}
