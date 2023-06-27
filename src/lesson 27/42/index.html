@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 42</title>
+
+    <link href="style.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <div class="navbar-brand mx-4" href="#">Store</div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" id="navHome">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="navOrders">My orders
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container" id="container">
+    <div class="row m-4" id="store">
+
+        <div class="col-3 card-body p-0 border">
+            <div class="list-group overflow-auto" style="max-height: 650px;" id="parent_category">
+            </div>
+        </div>
+
+        <div class="col-3 card-body p-0 border">
+            <div class="list-group overflow-auto" style="max-height: 650px;" id="parent_product">
+            </div>
+        </div>
+
+        <div class="col-6 card">
+            <div id="card" hidden>
+                <div class="product-photo-container">
+                    <img class="card-img-top product-photo" id="card_img">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="card_title"></h5>
+                    <p class="card-text mb-0" id="card_text"></p>
+                    <h4 class="card-text my-3" id="card_price"></h4>
+                    <a class="btn btn-primary btn-secondary form-control" id="buy_product">Buy</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="orders" hidden>
+        <div class="row m-4 justify-content-center">
+
+            <div class="col-6 card-body p-0 border">
+                <h3 class="text text-center p-2"> Orders</h3>
+                <div class="list-group overflow-auto" style="max-height: 350px; min-height: 40px" id="parent_orders">
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card m-4" id="detailed" hidden>
+            <div class="card-body">
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p class="mb-0">#</p>
+                        </div>
+                        <div class="col-sm-10">
+                            <p class="text-muted mb-0" id="detailedNumber"></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p class="mb-0">Product</p>
+                        </div>
+                        <div class="col-sm-10">
+                            <p class="text-muted mb-0" id="detailedProduct"></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p class="mb-0">Quantity</p>
+                        </div>
+                        <div class="col-sm-10">
+                            <p class="text-muted mb-0" id="detailedQuantity"></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p class="mb-0">Recipient</p>
+                        </div>
+                        <div class="col-sm-10">
+                            <p class="text-muted mb-0" id="detailedRecipient"></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p class="mb-0">City</p>
+                        </div>
+                        <div class="col-sm-10">
+                            <p class="text-muted mb-0" id="detailedCity"></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p class="mb-0">Warehouse number</p>
+                        </div>
+                        <div class="col-sm-10">
+                            <p class="text-muted mb-0" id="detailedWarehouse"></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p class="mb-0">Payments</p>
+                        </div>
+                        <div class="col-sm-10">
+                            <p class="text-muted mb-0" id="detailedPayments"></p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <p class="mb-0">Commentary</p>
+                        </div>
+                        <div class="col-sm-10">
+                            <p class="text-muted mb-0" id="detailedCommentary"></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer p-0">
+                <button type="submit" class="btn btn-danger btn-block mt-3" id="deleteOrder">Delete order</button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="modal fade" id="orderModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Order placement</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form">
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                Recipient
+                                <input type="text" class="form-control" id="inputName" name="inputName" required>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                City
+                                <select class="form-select form-control" id="citySelect" name="citySelect" required>
+                                    <option value=""></option>
+                                </select>
+                            </label>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                Warehouse number
+                                <input type="number" class="form-control" id="warehouseNumberInput"
+                                       name="warehouseNumberInput" min="1" max="100" required>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    Cash on delivery
+                                    <input class="form-check-input" type="radio" id="сashRadio" name="payMetod"
+                                           value="Cash on delivery"
+                                           required>
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    Bank card payments
+                                    <input class="form-check-input" type="radio" id="cardRadio" name="payMetod"
+                                           value="Bank card"
+                                           required>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                Quantity of goods
+                                <input type="number" class="form-control" id="quantityGoodsInput"
+                                       name="quantityGoodsInput" min="1" max="10" required>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                Commentary
+                                <textarea class="form-control" id="commentaryTextArea" name="commentaryTextArea"
+                                          rows="1"></textarea>
+                            </label>
+                        </div>
+
+                        <div class="form-group modal-footer p-0">
+                            <button type="submit" class="btn btn-primary btn-block mt-3">Buy</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="errorToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Store</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+            </div>
+            <div class="toast-body">
+                Sorry, server error.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<script src="main.js"></script>
+
+</body>
+</html>
